@@ -1,6 +1,6 @@
 # cmake-python-binding
 
-This project demo the very basic of How to create python library from C++ using CMake
+This project demo the very basic of How to create python library from C++ using `CMake` & `SWIG`
 
 You can use it as a base/template to your own.
 
