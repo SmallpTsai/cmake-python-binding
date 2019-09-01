@@ -8,7 +8,7 @@ You can use it as a base/template to your own.
 
 See `Dockerfile` for detail required environment.
 
-### build docker images
+### Build docker images
 
 See `fabfile.py` for detail command
 
@@ -16,10 +16,10 @@ See `fabfile.py` for detail command
 docker build -t cmake-python-binding-demo .
 ```
 
-Native library is at `/usr/local/lib/libdemo.so`
-Python package is at `/usr/local/lib/python3.6/dist-packages/demo`
++ Native library is at `/usr/local/lib/libdemo.so`
++ Python package is at `/usr/local/lib/python3.6/dist-packages/demo`
 
-### check the symbol in native library (.so)
+### Verify the symbols in native library (.so)
 
 ```
 docker run -it --rm cmake-python-binding-demo nm /usr/local/lib/libdemo.so
@@ -32,7 +32,9 @@ You should see below 2 symbols
 0000000000000a00 T _ZN4demo28hello_echo_only_in_cplusplusERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
 ```
 
-### check the symbol in python library
+> function implementation is at `demo/src/main.cpp`
+
+### Verify the symbols in python library
 
 ```
 > docker run -it --rm cmake-python-binding-demo bash
@@ -47,4 +49,9 @@ You should see below output
 
 Hello~python
 ```
+
+# FAQ (TBD)
+
+* Rename project from `demo` to another name
+* Use other library (ex. openssl, etc...)
 
